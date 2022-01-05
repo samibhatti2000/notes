@@ -1,0 +1,18 @@
+*{
+    background-color:darkkhaki;
+
+}
+
+.red{
+    color: rgb(3, 3, 3);
+    background-color: aquamarine;
+
+}
+.green{
+    color: cornsilk;
+    background-color: blueviolet;
+    height: 350px;
+    margin: 2px;
+
+
+}

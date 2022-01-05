@@ -1,0 +1,22 @@
+body{
+    background-image:url('img/nature.jpg');
+    background-repeat: no-repeat;
+    /*background-size: cover; */
+    background-position: top center;
+    background-attachment: scroll;
+}
+#dvtop{
+
+
+}
+#idul{
+    height: 500px;
+    list-style-type: none;
+    color: aliceblue;
+    align-items: center;
+}
+#dv1{
+    background-color: blueviolet;
+
+
+}

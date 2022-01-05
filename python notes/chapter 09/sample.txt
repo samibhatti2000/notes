@@ -1,0 +1,11 @@
+Python advance things
+Python 3 - Classes/Objects
+Python 3 - Reg Expressions
+Python 3 - CGI Programming
+Python 3 - Database Access
+Python 3 - Networking
+Python 3 - Sending Email
+Python 3 - Multithreading
+Python 3 - XML Processing
+Python 3 - GUI Programming
+Python 3 - Further Extensions

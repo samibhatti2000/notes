@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- There are five position properties 
+    position: absolute; /*absolute property */
+    position: fixed; /*it will move contianer on browser cornners */
+    position: relative;/*this position relative opne to move container top,rigt,bottom,left */
+    position: sticky;/*this sticky property help stick the header on page*/
+    position: -webkit-sticky;/**/
+    position: static;/*position static is default and top,right,bottom,left, properties doesnt work with static */ -->
+    <title>position property</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            display: inline-block;
+            margin: 16px;
+        }
+        header{
+            background-color: black;
+            color:aliceblue
+        }
+        p{
+            text-align: center;
+            border: 2px solid red;
+        }
+        .container{
+            margin: auto;
+            background-color: aqua;
+            height: 50vh;
+            width: 50vw;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: chartreuse;
+            position: relative;
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color:blueviolet;
+        }
+        .icon{
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            overflow: auto;
+            position: relative;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facilis dolorum quam quidem fuga iste, consequatur harum distinctio ullam ipsa velit. Officiis mollitia ut expedita quas praesentium. Minus labore nam iure eaque ratione sequi.</p>
+            <div class="box">i am a box</div>
+            <div class="box2">this is box2</div>
+            <div class="icon">LKe</div>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

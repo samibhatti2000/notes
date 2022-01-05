@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div layout</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #top {
+            background-color: black;
+            overflow: auto;
+        }
+
+        #left {
+            background-color: red;
+            width: 50%;
+            height: 90vh;
+            float: left;
+
+        }
+
+        #right {
+            background-color: green;
+            width: 50%;
+            height: 90vh;
+            float: left;
+            /*display: inline-block;*/
+
+        }
+
+        li a {
+            color: bisque;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            -webkit-filter: grayscale(100%) brightness(50%);
+        }
+
+        li {
+            display: inline-block;
+            padding: 16px;
+
+            /*float: left;*/
+
+        }
+
+        main {
+            overflow: auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="top">
+            <ul id="ulnav">
+                <li><a href="">home</a></li>
+                <li><a href="">product</a></li>
+                <li><a href="">about</a></li>
+
+            </ul>
+
+        </div>
+
+    </header>
+    <main>
+        <div id="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eum reprehenderit, error, maiores
+            vel assumenda iste tempora excepturi rerum quaerat omnis culpa illo ex adipisci id officia odio quos
+            architecto.</div>
+        <div id="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate doloribus sint tempora
+            sapiente delectus numquam adipisci vitae autem tempore, minus optio non inventore maiores, alias vero?
+            Consectetur iste ex rem?</div>
+    </main>
+
+</body>
+
+</html>

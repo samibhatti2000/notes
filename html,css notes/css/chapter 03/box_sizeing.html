@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box sizing</title>
+    <style>
+        #boxm{
+            background-color: red;
+            width: 300px;
+            height: 230px;
+            margin: 30;
+            border: 2px solid black;
+
+        }
+        #box{
+            background-color: aqua;
+            margin: 20px; /*remove margin in DOM*/
+            height: 20px;
+            width: 100%;
+            padding: 2px;
+            border: 6px solid gray;
+            box-sizing: border-box; /*with box sizing you ca control wether you child box will stay inside the parent or or not border-box value means box siza inculde paddin and border */
+            box-sizing: content-box; /*content-box means box size doesnt contain padding and border pixels*/
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="boxm">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa neque libero, pariatur in qui repellendus dolorum tenetur, fuga illo sed reprehenderit. Doloribus inventore, aspernatur perspiciatis ratione numquam dolore minima accusantium adipisci a ducimus vero!</p>
+        <div id="box">
+
+        </div>
+
+    </div>
+
+</body>
+</html>
