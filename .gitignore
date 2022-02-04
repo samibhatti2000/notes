@@ -1,0 +1,24 @@
+
+# dependencies
+Mern Stack/mernProjectEcommerce/node_modules
+Mern Stack/mernProjectEcommerce/frontend/node_modules
+Mern Stack/mernProjectEcommerce/frontend/.pnp
+Mern Stack/mernProjectEcommerce/frontend/.pnp.js
+
+# testing
+Mern Stack/mernProjectEcommerce/frontend/coverage
+
+# production
+Mern Stack/mernProjectEcommerce/frontend/build
+
+# misc
+Mern Stack/mernProjectEcommerce/backend/config/config.env
+Mern Stack/mernProjectEcommerce/frontend/.DS_Store
+Mern Stack/mernProjectEcommerce/frontend/.env.local
+Mern Stack/mernProjectEcommerce/frontend/.env.development.local
+Mern Stack/mernProjectEcommerce/frontend/.env.test.local
+Mern Stack/mernProjectEcommerce/frontend/.env.production.local
+
+Mern Stack/mernProjectEcommerce/npm-debug.log*
+Mern Stack/mernProjectEcommerce/yarn-debug.log*
+Mern Stack/mernProjectEcommerce/yarn-error.log*

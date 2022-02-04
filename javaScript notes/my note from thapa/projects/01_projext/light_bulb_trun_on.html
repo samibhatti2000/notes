@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light_bulb_trun_on</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            background-color: rgb(33, 33, 82);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #trun_on{
+            width: 10rem;
+            height: 2rem;
+            border: 2px solid black;
+            border-radius: 1rem;
+            background-color: blue;
+            color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #trun_of{
+            width: 10rem;
+            height: 2rem;
+            border: 2px solid black;
+            border-radius: 1rem;
+            background-color: yellow;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="trun_on">Turn on</button>
+    <div id="bulb"><img id="imgbulb" src="../01_projext/lightbulb_of.png" alt=""></div>
+    <button id="trun_of">Trun of</button>
+
+
+
+    <script>
+        const trun_on = document.getElementById('trun_on')
+        const imgbulb = document.getElementById('imgbulb')
+        const trun_of = document.getElementById('trun_of')
+
+        trun_on.addEventListener('click',()=>{
+            imgbulb.src='../01_projext/lightbulb_on.png';
+            trun_on.style.backgroundColor = "yellow";
+            trun_on.style.color = "black";
+            trun_of.style.backgroundColor = "blue";
+            trun_of.style.color = "whitesmoke";
+        });
+        trun_of.addEventListener('click',()=>{
+            imgbulb.src='../01_projext/lightbulb_of.png';
+            trun_on.style.backgroundColor = "blue";
+            trun_on.style.color = "whitesmoke";
+            trun_of.style.backgroundColor = "yellow";
+            trun_of.style.color = "black";
+
+        });
+
+    </script>
+</body>
+</html>

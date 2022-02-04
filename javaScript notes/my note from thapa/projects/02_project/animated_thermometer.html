@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>animated_thermo_meter</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            background-color: rgb(23, 23, 63);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+
+        #container {
+            margin: auto;
+            cursor: pointer;
+            position: absolute;
+            top: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #txt {
+            font-family: sans-serif;
+            font-size: 8rem;
+        }
+        #icon{
+            font-size: 18rem;
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container" class="container">
+        <p id="txt">I am<br>Thermometer:</p>
+        <i id="icon" class="fas fa-5x fa-thermometer-quarter"></i>
+    </div>
+
+    <script>
+        "use strict"
+        const icon = document.getElementById('icon');
+        const container = document.getElementById('container');
+        icon.style.color = "white";
+        container.style.color = "white";
+        
+            // container.style.color = "red";
+            
+            function callback() {
+                setTimeout(() => {
+                    console.log('hello 1');
+                    icon.style.color = "red";
+                    container.style.color = "yellow";
+                    
+                }, 1000);
+                setTimeout(() => {
+                    console.log('hello 2');
+                    icon.classList.remove("fa-thermometer-quarter");
+                    icon.classList.add("fa-thermometer-half");
+                    icon.style.color = "blue";
+                    container.style.color = "=green";
+                }, 2000);
+                setTimeout(() => {
+                    console.log('hello 3');
+                    icon.classList.remove('fa-thermometer-half');
+                    icon.classList.add('fa-thermometer-full');
+                    icon.style.color = "yellow";
+                    container.style.color = "green";
+                }, 3000);
+                setTimeout(() => {
+                    console.log('hello 3');
+                    icon.classList.remove('fa-thermometer-full');
+                    icon.classList.add('fa-thermometer-quarter');
+                    icon.style.color = "green";
+                    container.style.color = "yellow";
+                }, 4000);
+            }
+            callback();
+            setInterval(callback,4000);
+            
+    
+    </script> 
+</body>
+
+</html>

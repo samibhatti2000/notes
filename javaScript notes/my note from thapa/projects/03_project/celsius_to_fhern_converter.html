@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>celsius_to_fhern_converter</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    #container{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(19, 19, 65);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #mainbox{
+        width: 40rem;
+        height: 20rem;
+        border: 1px solid black;
+        border-radius: .1rem;
+        background-color: rgb(17, 17, 17);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: whitesmoke;
+    }
+    h2{
+        font-family: sans-serif;
+        margin: 1rem;
+        color: whitesmoke;
+    }
+    #inputarea{
+        width: 4rem;
+        height: 2rem;
+    }
+    #submit{
+        margin: 1rem;
+        width: 12rem;
+    }
+    #resetform{
+        width: 4rem;
+    }
+    
+</style>
+
+<body>
+    <div id="container" class="container">
+        <div id="mainbox" class="mainbox">
+            <h2>Please enter the temperature to convert</h2>
+            <br>
+            <form id="tempform" onsubmit="onSubmit(); return false">
+                <span id="inputarea">
+                    <input type="number" id="tempinput">
+                </span>
+                <select name="tempselect" id="tempselect">
+                    <option value="Celsius">°Celsius</option>
+                    <option value="Fahrenheit">°Fahrenheit</option>
+                </select><br>
+                <input type="submit" name="submit" id="submit" placeholder="Convert">
+                <button id="resetform">reset</button>
+                <br>
+                <span id="resultbox">0 °Celsius into °Fahrenheit is: 32</span>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const submit = document.getElementById('submit')//.addEventListener('click',onsubmit)
+        const resetform = document.getElementById('resetform')
+        const tempform = document.getElementById("tempform")
+        const tempselect = document.getElementById('tempselect')
+        const tempinput = document.getElementById('tempinput').value
+        const innerhtml = document.getElementById('innerhtml')
+        const resultbox = document.getElementById('resultbox')
+        
+        function onSubmit(){
+            console.log(tempinput);
+            const temp_option = tempselect.options[tempselect.selectedIndex].value
+            console.log(temp_option);
+            let result;
+            if(temp_option == 'Celsius'){
+                const tempinput = document.getElementById('tempinput').value
+                result = celToFeh(tempinput);
+                resultbox.innerHTML = `${tempinput} °Celsius into °Fahrenheit is: ${Math.round(result*100)/100}`
+                function celToFeh(){
+                    const data = (tempinput/5*9)+32
+                    return data;
+                }
+                
+            }
+            else if(temp_option == 'Fahrenheit'){
+                const tempinput = document.getElementById('tempinput').value
+                result = fehToCel(tempinput);
+                resultbox.innerHTML = `${tempinput} °Fahrenheit into °Celsius is: ${Math.round(result*100)/100}`
+                function fehToCel(){
+                    const data = (tempinput-32)*5/9
+                    return data;
+                }
+            }
+        }
+        resetform.addEventListener('click',()=>{
+            console.log('reset');
+            tempform.reset();
+        })
+
+
+    </script>
+</body>
+
+</html>

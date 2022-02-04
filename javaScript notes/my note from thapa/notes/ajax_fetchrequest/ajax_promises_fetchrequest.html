@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax_fetchrequest</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color:gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            width: 36rem;
+            height: 12rem;
+            background-color: burlywood;
+            border: 2px solid black;
+            border-radius: 1rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        #btn {
+            width: 10rem;
+            height: 2rem;
+            border: 2px solid black;
+            border-radius: 1rem;
+            background-color: cornflowerblue;
+        }
+        
+        #divapi {
+            width: 28rem;
+            height: 6rem;
+            border: 2px solid black;
+            border-radius: 1rem;
+            background-color: blueviolet;
+            margin: 1rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="divapi">your joke is on the way loading....</div>
+        <button id="btn">Click To Get Jokes</button>
+    </div>
+
+
+    <script>
+        // PROMISES uses => .then and .catch in fetching.
+        // .then means fecthing is successed
+        // .catch means fecthing fails due to any error
+
+        // fetch(); method is new technique to fetch data from API
+
+        // always define feth method in your eventlistner onclick
+        document.getElementById('btn').addEventListener('click', btClick);
+        const divapi = document.getElementById('divapi') //this div for inserting html
+        function btClick() {
+            
+            //difine function for setting header if you need
+            const setheader = {
+                headers: {
+                    Accept : "application/json" //this key if you are getting html data
+                }
+            }
+            //fetch(); method
+            // let reso = res.json// res.json() // use .json if your are getting html data 
+            fetch('https://icanhazdadjoke.com', setheader)
+                .then((res) => res.json() )
+                .then( (data) => {
+                        divapi.innerHTML = data.joke;
+                }).catch((err) => {
+                    console.log( 'here is your error',err);
+                }) 
+
+            }
+            
+            </script>
+</body>
+
+</html>
