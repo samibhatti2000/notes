@@ -1,0 +1,20 @@
+{
+  "name": "mochachai",
+  "version": "1.0.0",
+  "description": "This project is a simple example of how the use chai js y mocha js",
+  "main": "main.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/_mocha || exit 0"
+  },
+  "keywords": [
+    "mocha",
+    "chai",
+    "javascript"
+  ],
+  "author": "joanmedia",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
+}

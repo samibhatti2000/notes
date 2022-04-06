@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div id="divapi">
+    <!-- <div id="htmlData">
+        <p>weather: ${data.weather[0].main}</p>
+        <p>description: ${data.weather[0].description}</p>
+        <p>clouds: ${data.clouds.all}</p>
+        <p>temp: ${data.main.temp}</p>
+        <p>feels_like: ${data.main.feels_like}</p>
+        <p>pressure: ${data.main.pressure}</p>
+        <p>humidity: ${data.main.humidity}</p>
+        <p>wind speed: ${data.wind.speed} m/s (meters per second)</p>
+    </div> -->
+    </div>
+
+
+    <script>
+        //making const for api get request
+        const request = new XMLHttpRequest();
+        let city = 'karachi'
+        request.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=b9d0de66d6f0a6c0abe9879c393f3d05`);
+        request.send();
+        //to get response
+        request.addEventListener('load', datafunc);
+        function datafunc() {
+            const djson = request.responseText; //json.parse method covert json data 
+            const data = JSON.parse(djson);
+            let help = Object.entries(data);
+            console.log(help);
+            console.log(data.weather[0].main);
+            console.log(data.weather[0].description);
+            console.log(data.clouds.all);
+            console.log(data.main.temp);
+            console.log(data.main.feels_like);
+            console.log(data.main.pressure);
+            console.log(data.main.humidity);
+            console.log(data.wind.speed);
+
+            // into javasript object key value pair
+            //plus json.stringie will convert javascript key value object to json dict format
+            // console.log(data);
+            const htmlData = `
+            <div id="htmlData">
+            <p>City name: ${data.name}</p>
+            <p>weather: ${data.weather[0].main}</p>
+            <p>description: ${data.weather[0].description}</p>
+            <p>clouds: ${data.clouds.all}%</p>
+            <p>temp: ${data.main.temp}°C</p>
+            <p>feels like: ${data.main.feels_like}</p>
+            <p>pressure: ${data.main.pressure}</p>
+            <p>humidity: ${data.main.humidity}%</p>
+            <p>wind speed: ${data.wind.speed} m/s (meters per second)</p>
+            </div>
+            `;
+            //insert the dta into your desired div by insertAdjacentHTML(), method
+            const divapi = document.getElementById('divapi');
+            divapi.insertAdjacentHTML('afterbegin', htmlData); //insertAdjacentHTML(); take 'afterbegin' as parameter
+        }
+
+        //as a next step you have to make your html according to your apr by using data.yourvalue
+        //so make a const for your html template for html
+
+        // Api for wethear
+        // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=75074f658f6501579967450d9e0de9dd
+        //search eith city name
+        // https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=b9d0de66d6f0a6c0abe9879c393f3d05
+
+
+    </script>
+</body>
+
+</html>
